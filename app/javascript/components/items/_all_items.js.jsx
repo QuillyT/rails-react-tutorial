@@ -1,19 +1,13 @@
 import React from "react";
-import $ from 'jquery';
 
 export default class AllItems extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {items: []};
-    }
-
-    componentDidMount() {
-        $.getJSON('/api/v1/items.json', (response) => { this.setState({ items: response }) });
+    constructor(props) {
+        super(props);
     }
 
     render() {
-        let items= this.state.items.map((item) => {
+        let items= this.props.items.map((item) => {
             return (
                 <div key={item.id}>
                     <p>{item.id} {item.name} {item.description}</p>

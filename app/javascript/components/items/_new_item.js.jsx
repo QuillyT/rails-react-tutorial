@@ -6,17 +6,17 @@ export default function NewItem(props) {
     let itemInput = React.createRef();
 
     function handleClick() {
-        console.log("Clicked");
+        // console.log("Clicked");
         let name = $(itemInput.current).find("[name='name']").val();
         let description = $(itemInput.current).find("[name='description']").val();
-        console.log(name + " " + description);
+        // console.log(name + " " + description);
 
         $.ajax({
             url: "/api/v1/items",
             type: "POST",
             data: { item: { name: name, description: description } },
-            success: response => {
-                console.log("it worked!", response);
+            success: (item) => {
+                props.handleSubmit(item);
             }
         });
     }
