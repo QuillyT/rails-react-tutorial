@@ -6,10 +6,8 @@ export default function NewItem(props) {
     let itemInput = React.createRef();
 
     function handleClick() {
-        // console.log("Clicked");
         let name = $(itemInput.current).find("[name='name']").val();
         let description = $(itemInput.current).find("[name='description']").val();
-        // console.log(name + " " + description);
 
         $.ajax({
             url: "/api/v1/items",
