@@ -1,4 +1,4 @@
-### Rails/React Tutorial
+# Rails/React Tutorial
 
 I was following [this tutorial](https://www.pluralsight.com/guides/building-a-crud-interface-with-react-and-ruby-on-rails) to learn React and see what the newest stable Rails version (5.2) is like.
 
